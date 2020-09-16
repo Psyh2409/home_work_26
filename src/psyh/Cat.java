@@ -89,11 +89,11 @@ public class Cat {
         sleep = false;
     }
 
-    public void eating(){
+    public void eating() {
         weight += 0.1;
     }
 
-    public void happyBirthday(){
+    public void happyBirthday() {
         age += 1;
     }
 }

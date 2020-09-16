@@ -7,7 +7,7 @@ public class Triangle {
     private final double area;
 
 
-    public Triangle(double a, double b, double c){
+    public Triangle(double a, double b, double c) {
         this.a = a;
         this.b = b;
         this.c = c;
@@ -24,7 +24,7 @@ public class Triangle {
                 '}';
     }
 
-    private double area(){
-        return Math.sqrt((a+b+c)*(b+c-a)*(a+c-b)*(a+b-c))/4;
+    private double area() {
+        return Math.sqrt((a + b + c) * (b + c - a) * (a + c - b) * (a + b - c)) / 4;
     }
 }

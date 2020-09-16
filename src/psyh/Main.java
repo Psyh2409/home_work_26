@@ -38,8 +38,8 @@ public class Main {
         System.out.println(cat2);
         System.out.println();
 
-        Triangle triangle1 = new Triangle(3, 4 , 5);
-        Triangle triangle2 = new Triangle(2, 3 , 3.5);
+        Triangle triangle1 = new Triangle(3, 4, 5);
+        Triangle triangle2 = new Triangle(2, 3, 3.5);
 
         System.out.println(triangle1);
         System.out.println(triangle2);
