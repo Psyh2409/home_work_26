@@ -1,5 +1,8 @@
 package psyh;
 
+import psyh.task_phone.Network;
+import psyh.task_phone.Phone;
+
 public class Main {
     public static void main(String[] args) {
         Cat cat1 = new Cat("male", "Tom", "black", 15, 5);
@@ -43,5 +46,28 @@ public class Main {
         System.out.println(triangle1);
         System.out.println(triangle2);
         System.out.println(triangle);
+        System.out.println();
+// Task Phone
+        for (int i = 38066; i <= 38099; i++) {
+            Network.getNetwork().add(i - 38066, new Phone(i));
+        }
+        System.out.println("Network has Phones with numbers from 38066 to 38099");
+        System.out.println();
+
+        Phone phone1 = Network.getNetwork().get(38097 - 38066); // Phone{number=83097}
+        Phone phone2 = new Phone(38050);
+        Phone phone3 = new Phone(38666);
+
+        System.out.println(phone1);
+        System.out.println(phone2);
+        System.out.println(phone3);
+        System.out.println();
+        phone1.signUp();
+        phone1.makeCall(phone2.getNumber());
+        System.out.println();
+        phone2.signUp();
+        phone2.makeCall(phone1.getNumber());
+        System.out.println();
+        phone3.makeCall(phone1.getNumber());
     }
 }
