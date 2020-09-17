@@ -1,7 +1,5 @@
 package psyh;
 
-import java.sql.SQLOutput;
-
 public class Main {
     public static void main(String[] args) {
         Cat cat1 = new Cat("male", "Tom", "black", 15, 5);
@@ -40,8 +38,10 @@ public class Main {
 
         Triangle triangle1 = new Triangle(3, 4, 5);
         Triangle triangle2 = new Triangle(2, 3, 3.5);
+        Triangle triangle = new Triangle();
 
         System.out.println(triangle1);
         System.out.println(triangle2);
+        System.out.println(triangle);
     }
 }
