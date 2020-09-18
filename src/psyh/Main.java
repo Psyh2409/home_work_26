@@ -48,13 +48,14 @@ public class Main {
         System.out.println(triangle);
         System.out.println();
 // Task Phone
+        Network network = new Network();
         for (int i = 38066; i <= 38099; i++) {
-            Network.getNetwork().add(i - 38066, new Phone(i));
+            network.getNetwork().add(i - 38066, new Phone(i));
         }
         System.out.println("Network has Phones with numbers from 38066 to 38099");
         System.out.println();
 
-        Phone phone1 = Network.getNetwork().get(38097 - 38066); // Phone{number=83097}
+        Phone phone1 = network.getNetwork().get(38097 - 38066); // Phone{number=83097}
         Phone phone2 = new Phone(38050);
         Phone phone3 = new Phone(38666);
 
@@ -62,12 +63,12 @@ public class Main {
         System.out.println(phone2);
         System.out.println(phone3);
         System.out.println();
-        phone1.signUp();
-        phone1.makeCall(phone2.getNumber());
+        phone1.signUp(network);
+        phone1.makeCall(phone2.getNumber(), network);
         System.out.println();
-        phone2.signUp();
-        phone2.makeCall(phone1.getNumber());
+        phone2.signUp(network);
+        phone2.makeCall(phone1.getNumber(), network);
         System.out.println();
-        phone3.makeCall(phone1.getNumber());
+        phone3.makeCall(phone1.getNumber(), network);
     }
 }

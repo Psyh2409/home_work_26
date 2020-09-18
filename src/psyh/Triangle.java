@@ -4,7 +4,6 @@ public class Triangle {
     private double a;
     private double b;
     private double c;
-    private double area;
 
     public Triangle(){super();}
 
@@ -12,11 +11,6 @@ public class Triangle {
         this.a = a;
         this.b = b;
         this.c = c;
-        area = area();
-    }
-
-    public double getArea() {
-        return area;
     }
 
     public double getA() {
@@ -49,11 +43,10 @@ public class Triangle {
                 "a=" + a +
                 ", b=" + b +
                 ", c=" + c +
-                ", area=" + area +
                 '}';
     }
 
-    private double area() {
+    public double getArea() {
         return Math.sqrt((a + b + c) * (b + c - a) * (a + c - b) * (a + b - c)) / 4;
     }
 }
