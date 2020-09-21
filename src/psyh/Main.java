@@ -64,11 +64,11 @@ public class Main {
         System.out.println(phone3);
         System.out.println();
         phone1.signUp(network);
-        phone1.makeCall(phone2.getNumber(), network);
+        phone1.makeCall(phone2.getNumber());
         System.out.println();
         phone2.signUp(network);
-        phone2.makeCall(phone1.getNumber(), network);
+        phone2.makeCall(phone1.getNumber());
         System.out.println();
-        phone3.makeCall(phone1.getNumber(), network);
+        phone3.makeCall(phone1.getNumber());
     }
 }

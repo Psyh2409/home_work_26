@@ -4,8 +4,11 @@ import java.util.Objects;
 
 public class Phone {
     private int number;
+    private Network network;
 
-    public Phone(){super();}
+    public Phone() {
+        super();
+    }
 
     public Phone(int number) {
         this.number = number;
@@ -27,32 +30,35 @@ public class Phone {
                 '}';
     }
 
-    public void signUp(Network network){
-
-        if (network.getNetwork().contains(this)){
+    public void signUp(Network network) {
+        if (network.getNetwork().contains(this)) {
             System.out.println("This number is already registered!");
-        }else {
+        } else {
             network.getNetwork().add(this);
+            this.network = network;
             System.out.println("Your registration is successfully!");
         }
     }
 
-    public void makeCall(int subscriberNumber, Network network){
-        boolean call = false;
-        if(network.getNetwork().contains(this)){
-            for (Phone phone: network.getNetwork()) {
-                if (phone.getNumber() == subscriberNumber){
+    public void makeCall(int subscriberNumber) {
+        boolean isCallMade = false;
+        if (network != null && network.getNetwork() != null && network.getNetwork().contains(this)) {
+            for (Phone phone : network.getNetwork()) {
+                if (phone.getNumber() == subscriberNumber) {
+                    System.out.println("You call to " + subscriberNumber + ". Connecting...");
+                    phone.takeCall(this.number);
                     System.out.println("You made call to " + subscriberNumber);
-                    call = true;
+                    isCallMade = true;
                 }
             }
-            if (!call) {
-                System.out.println("This number isn't registered in uor Network.");
+            if (!isCallMade) {
+                System.out.println("This number isn't registered in our Network.");
             }
-        }else System.out.println("You can't make any call until your phone is unregistered in our Network.");
+        } else System.out.println("You can't make any call till your phone is unregistered in our Network.");
     }
-    public void takeCall(){
-        System.out.println("Call is taken.");
+
+    public void takeCall(int incomingNumber) {
+        System.out.println("Call from " + incomingNumber);
     }
 
     @Override
