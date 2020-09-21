@@ -2,13 +2,15 @@ package psyh;
 
 public class Cat {
 
-    private final String sex;
+    private String sex;
     private String name;
-    private final String color;
+    private String color;
     private double weight;
     private int age;
     private boolean aggressive;
     private boolean sleep;
+
+    public Cat(){super();}
 
     public Cat(String sex, String name, String color, double weight, int age) {
         this.sex = sex;
@@ -25,6 +27,30 @@ public class Cat {
 
     public String getName() {
         return name;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setAggressive(boolean aggressive) {
+        this.aggressive = aggressive;
+    }
+
+    public void setSleep(boolean sleep) {
+        this.sleep = sleep;
     }
 
     public void setName(String name) {
